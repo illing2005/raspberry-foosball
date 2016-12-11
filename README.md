@@ -37,3 +37,15 @@
         npm run start
 
 - See https://facebook.github.io/react-native/docs/signed-apk-android.html how to create an signed apk
+
+### Hardware:
+
+For the goal detection, you need two infrared light barriers (see sketch).
+The red LED is for testing purposes only and can be removed.
+
+Needed parts:
+
+- IR Emitter and Reciever pairs (like these http://www.pollin.de/shop/dt/NzA0OTc4OTk-/Bauelemente_Bauteile/Aktive_Bauelemente/Optoelektronik/Infrarot_Lichtschranken_Paare_TEMIC_K153P.html)
+- A few Resistors
+
+![scheme](doc/sketch.png)
