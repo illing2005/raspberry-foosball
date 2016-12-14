@@ -9,6 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 from config import GPIO_PLAYER_TWO_PIN, GPIO_PLAYER_ONE_PIN
 from goaldetector import GoalDetector
 from pusher_client import PusherClient
+from replay import Replay
 
 
 SIGNALS = (
@@ -31,7 +32,10 @@ def main():
     GoalDetector(GPIO_PLAYER_TWO_PIN, 1, signals)
 
     # Pusher thread listens to events
-    p = PusherClient(signals)
+    pusher_client = PusherClient(signals)
+
+    # Start recording for replays
+    replay = Replay(signals)
 
     logging.info('Main: Setup done')
 
