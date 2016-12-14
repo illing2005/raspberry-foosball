@@ -1,0 +1,6 @@
+# camera interface
+picamera==1.12
+# pusher.com python client
+pusher==1.6
+# simple pubsub system
+blinker==1.3

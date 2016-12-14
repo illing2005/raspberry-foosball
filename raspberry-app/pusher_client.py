@@ -1,14 +1,14 @@
 import pusher
 from config import PUSHER_APP_ID, PUSHER_SECRET_KEY, PUSHER_KEY
-from threading import Thread
 import logging
 
 
-class PusherThread(object):
+class PusherClient(object):
     """
 
     """
-    def __init__(self, queue):
+
+    def __init__(self, signals):
         # connect to pusher
         self.client = pusher.Pusher(
           app_id=PUSHER_APP_ID,
@@ -18,9 +18,14 @@ class PusherThread(object):
           ssl=False
         )
         logging.info('Connected to Pusher')
-        self.queue = queue
-        self.thread = Thread(target=self.listen)
-        self.thread.start()
+        self.signals = signals
+
+        # connect to all signals we want to subscribe
+        for name, signal in self.signals.iteritems():
+            method = getattr(self, '%s_subscription' % name, None)
+            if method:
+                signal.connect(method)
+                logging.info('Pusher: Connected to signal "%s"' % name)
 
     def listen(self):
         """
@@ -30,18 +35,18 @@ class PusherThread(object):
         while True:
             event = self.queue.get()
             if event:
-                logging.info('Event detected %s' % event)
+                logging.info('Pusher: Event detected %s' % event)
                 method = getattr(self, event.pop('type'))
                 if method:
                     method(**event)
 
-    def goal_scored(self, player_id):
+    def goal_scored_subscription(self, data):
         """
         Push a goal to subscribers
         """
         self.client.trigger(
             'kicker_channel',
             'goal_scored',
-            {'player': player_id}
+            {'player': data['player_id']}
         )
-        logging.info('Goal for player %s triggered' % player_id)
+        logging.info('Pusher: Goal for player %s triggered' % data['player_id'])
