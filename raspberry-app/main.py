@@ -14,6 +14,7 @@ from replay import Replay
 
 SIGNALS = (
     'goal_scored',
+    'replay_ready',
 )
 
 

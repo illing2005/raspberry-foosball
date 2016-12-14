@@ -13,7 +13,7 @@ class GoalDetector(object):
         # initialize pin
         GPIO.setup(PIN, GPIO.IN)
         # use threaded event detection
-        GPIO.add_event_detect(self.PIN, GPIO.RISING, callback=self.on_goal, bouncetime=1000)
+        GPIO.add_event_detect(self.PIN, GPIO.RISING, callback=self.on_goal, bouncetime=5000)
         logging.info('GoalDetector: %s at pin %s initialized' % (id, PIN))
 
     def on_goal(self, channel):
@@ -21,5 +21,5 @@ class GoalDetector(object):
         Send a event to the queue.
         {type: 'goal_scored', 'player': id}
         """
-        logging.info('GoalDetector: GOAL Player %s' % str(self.id + 1))
+        logging.info('GoalDetector: GOAL Player %s' % str(self.id))
         self.signals['goal_scored'].send({'type': 'goal_scored', 'player_id': self.id})

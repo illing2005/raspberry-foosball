@@ -40,6 +40,9 @@ class PusherClient(object):
                 if method:
                     method(**event)
 
+    def replay_ready_subscription(self, data):
+        logging.info('Pusher: Replay ready %s' % data)
+
     def goal_scored_subscription(self, data):
         """
         Push a goal to subscribers
@@ -49,4 +52,4 @@ class PusherClient(object):
             'goal_scored',
             {'player': data['player_id']}
         )
-        logging.info('Pusher: Goal for player %s triggered' % data['player_id'])
+        logging.info('Pusher: Goal for player %s pushed' % data['player_id'])
