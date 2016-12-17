@@ -29,6 +29,9 @@ class LEDStrip(object):
                 signal.connect(method)
                 logging.info('LEDStrip: Connected to signal "%s"' % name)
 
+    def __del__(self):
+        self.set_color(*OFF)
+
     def goal_scored_subscription(self, data):
         """
         Start a thread to blink the led strip

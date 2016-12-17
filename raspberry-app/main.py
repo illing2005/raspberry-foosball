@@ -36,9 +36,12 @@ def main():
     l = LEDStrip(signals)
 
     logging.info('Main: Setup done')
-    
-    while True:
-        pass
+
+    try:
+        while True:
+            pass
+    finally:
+        del l
 
 
 if __name__ == '__main__':
