@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 from config import GPIO_PLAYER_TWO_PIN, GPIO_PLAYER_ONE_PIN
 from goaldetector import GoalDetector
 from pusher_client import PusherClient
-
+from led_strip import LEDStrip
 
 SIGNALS = (
     'goal_scored',
@@ -33,8 +33,10 @@ def main():
     # Pusher thread listens to events
     p = PusherClient(signals)
 
-    logging.info('Main: Setup done')
+    l = LEDStrip(signals)
 
+    logging.info('Main: Setup done')
+    
     while True:
         pass
 
