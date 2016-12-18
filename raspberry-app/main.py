@@ -10,7 +10,7 @@ from config import GPIO_PLAYER_TWO_PIN, GPIO_PLAYER_ONE_PIN
 from goaldetector import GoalDetector
 from pusher_client import PusherClient
 from replay import Replay
-
+from led_strip import LEDStrip
 
 SIGNALS = (
     'goal_scored',
@@ -38,10 +38,15 @@ def main():
     # Start recording for replays
     replay = Replay(signals)
 
+    l = LEDStrip(signals)
+
     logging.info('Main: Setup done')
 
-    while True:
-        pass
+    try:
+        while True:
+            pass
+    finally:
+        del l
 
 
 if __name__ == '__main__':
