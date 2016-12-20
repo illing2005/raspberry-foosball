@@ -7,3 +7,11 @@ GPIO_PLAYER_TWO_PIN = 14
 PUSHER_APP_ID = '######'
 PUSHER_KEY = '#############'
 PUSHER_SECRET_KEY = '############'
+
+# led rgb strip
+RED_PIN = 16
+BLUE_PIN = 20
+GREEN_PIN = 21
+
+PLAYER_ONE_BLINK_COLOR = (255, 0, 0)    # RED
+PLAYER_TWO_BLINK_COLOR = (255, 255, 0)  # YELLOW
