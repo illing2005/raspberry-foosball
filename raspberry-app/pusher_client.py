@@ -41,7 +41,12 @@ class PusherClient(object):
                     method(**event)
 
     def replay_ready_subscription(self, data):
-        logging.info('Pusher: Replay ready %s' % data)
+        self.client.trigger(
+            'kicker_channel',
+            'replay_ready',
+            {'player': 'test'}
+        )
+        logging.info('Pusher: Replay ready pushed')
 
     def goal_scored_subscription(self, data):
         """

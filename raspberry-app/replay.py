@@ -13,8 +13,8 @@ class Replay(object):
     def __init__(self, signals):
 
         self.camera = picamera.PiCamera()
-        self.camera.framerate = 90
-        self.camera.resolution = '920x750'
+        self.camera.framerate = 30
+        self.camera.resolution = '680x480'
         self.stream = picamera.PiCameraCircularIO(self.camera, seconds=5)
         logging.info('Camera initialized: Frames %s, Resolution %s' % (self.camera.framerate, self.camera.resolution))
 
@@ -29,7 +29,7 @@ class Replay(object):
         self.camera.start_recording(self.stream, format='h264')
         logging.info('Camera: Start recording')
 
-        self.start_http_server()
+        #self.start_http_server()
         logging.info('Camera: Http server started')
 
     def __def__(self):
