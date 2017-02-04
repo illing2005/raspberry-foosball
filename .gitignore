@@ -46,3 +46,7 @@ android/keystores/debug.keystore
 # Credential files
 config.py
 config.js
+
+# Viedo files
+*.mp4
+*.h264

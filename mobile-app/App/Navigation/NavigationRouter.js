@@ -17,6 +17,7 @@ import ThemeScreen from '../Containers/ThemeScreen'
 import DeviceInfoScreen from '../Containers/DeviceInfoScreen'
 
 import HomeScreen from '../Containers/HomeScreen'
+import ReplayScreen from '../Containers/ReplayScreen'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
@@ -29,6 +30,7 @@ class NavigationRouter extends Component {
         <Scene key='drawer' component={NavigationDrawer} open={false}>
           <Scene key='drawerChildrenWrapper' navigationBarStyle={Styles.navBar} titleStyle={Styles.title} leftButtonIconStyle={Styles.leftButton} rightButtonTextStyle={Styles.rightButton}>
             <Scene initial key='HomeScreen' component={HomeScreen} title='Kicker' renderLeftButton={NavItems.hamburgerButton} />
+            <Scene key='replayScreen' component={ReplayScreen} title='Replay' />
             <Scene key='componentExamples' component={AllComponentsScreen} title='Components' />
             <Scene key='listviewExample' component={ListviewExample} title='Listview Example' />
             <Scene key='listviewGridExample' component={ListviewGridExample} title='Listview Grid' />

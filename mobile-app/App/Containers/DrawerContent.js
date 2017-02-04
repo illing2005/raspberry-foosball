@@ -38,6 +38,16 @@ class DrawerContent extends Component {
     NavigationActions.theme()
   }
 
+  handleReplay = () => {
+    this.toggleDrawer()
+    NavigationActions.replayScreen()
+  }
+
+  handleHome = () => {
+    this.toggleDrawer()
+    NavigationActions.HomeScreen()
+  }
+
   handlePressDevice = () => {
     this.toggleDrawer()
     NavigationActions.deviceInfo()
@@ -47,6 +57,8 @@ class DrawerContent extends Component {
     return (
       <ScrollView style={styles.container}>
         <Image source={Images.logo} style={styles.logo} />
+        <DrawerButton text='Home' onPress={this.handleHome} />
+        <DrawerButton text='Replay' onPress={this.handleReplay} />
         <DrawerButton text='Component Examples' onPress={this.handlePressComponents} />
         <DrawerButton text='API Testing' onPress={this.handlePressAPI} />
         <DrawerButton text='Themes' onPress={this.handlePressTheme} />
