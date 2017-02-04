@@ -26,7 +26,7 @@ def main():
     signals = dict()
     for s in SIGNALS:
         signals[s] = signal(s)
-        print signals[s].name
+        logging.info('Main: Signal added' % signals[s].name)
 
     # create goal detection instances
     GoalDetector(GPIO_PLAYER_ONE_PIN, 0, signals)
