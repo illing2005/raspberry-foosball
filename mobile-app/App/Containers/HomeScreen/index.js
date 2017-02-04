@@ -32,8 +32,11 @@ class HomeScreen extends React.Component {
     let channel = pusher.subscribe('kicker_channel');
     channel.bind('goal_scored', function(data) {
       goalScored(data.player)
-    });
+    })
     this.props.startGame()
+    channel.bind('replay_ready', function(data) {
+      NavigationActions.replayScreen()
+    });
   }
 
   stopGame() {
@@ -62,9 +65,9 @@ class HomeScreen extends React.Component {
               :
               <View style={{flex: 2}}>
                 <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',}}>
-                  <View style={{width:200}}><Text style={{fontSize: 150, textAlign: 'center'}}>{score[0]}</Text></View>
-                  <View style={{width:20}}><Text style={{fontSize: 150, textAlign: 'center'}}>:</Text></View>
-                  <View style={{width:200}}><Text style={{fontSize: 150, textAlign: 'center'}}>{score[1]}</Text></View>
+                  <View style={{width:400}}><Text style={{fontSize: 300, textAlign: 'center'}}>{score[0]}</Text></View>
+                  <View style={{width:40}}><Text style={{fontSize: 300, textAlign: 'center'}}>:</Text></View>
+                  <View style={{width:400}}><Text style={{fontSize: 300, textAlign: 'center'}}>{score[1]}</Text></View>
                 </View>
               </View> }
           </View>

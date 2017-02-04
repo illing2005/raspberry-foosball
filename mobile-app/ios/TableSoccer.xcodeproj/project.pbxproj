@@ -35,6 +35,8 @@
 		4AA9850F450F4AB383DC8E7C /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E3F6D78295C41B4827BB8C1 /* MaterialIcons.ttf */; };
 		CF7AB858B01E40C392CB1B93 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A610320906D94449B4064942 /* Octicons.ttf */; };
 		9DE2D17061534112B5C4F089 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90BD3C6F27C746F89C356ABD /* Zocial.ttf */; };
+		FA82A534DFF140889A5312BF /* libKCKeepAwake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CF3440525B4097AAE5BD7C /* libKCKeepAwake.a */; };
+		D5B4B9E71D13405F9BA4A380 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 726B972AA72E48C682B5640D /* libRCTVideo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,10 @@
 		7E3F6D78295C41B4827BB8C1 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A610320906D94449B4064942 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		90BD3C6F27C746F89C356ABD /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C29A0D3A093F45C299EC2FE5 /* KCKeepAwake.xcodeproj */ = {isa = PBXFileReference; name = "KCKeepAwake.xcodeproj"; path = "../node_modules/react-native-keep-awake/ios/KCKeepAwake.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		07CF3440525B4097AAE5BD7C /* libKCKeepAwake.a */ = {isa = PBXFileReference; name = "libKCKeepAwake.a"; path = "libKCKeepAwake.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		06ED07619BF245D8B12F0D09 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		726B972AA72E48C682B5640D /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,8 @@
 				1D21BCD0F86C4F42B1663A47 /* libRNI18n.a in Frameworks */,
 				E5F4C3E1F2EC4E74918BD355 /* libAirMaps.a in Frameworks */,
 				853463616EA24C80A8EEBC4D /* libRNVectorIcons.a in Frameworks */,
+				FA82A534DFF140889A5312BF /* libKCKeepAwake.a in Frameworks */,
+				D5B4B9E71D13405F9BA4A380 /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +322,8 @@
 				5FB3D500D886444EA27B88DB /* RNI18n.xcodeproj */,
 				4D7E503801D342E8AB6D3856 /* AirMaps.xcodeproj */,
 				E8DA24597D8648E89EA8F47D /* RNVectorIcons.xcodeproj */,
+				C29A0D3A093F45C299EC2FE5 /* KCKeepAwake.xcodeproj */,
+				06ED07619BF245D8B12F0D09 /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -658,6 +668,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -674,6 +686,8 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableSoccer.app/TableSoccer";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -698,6 +712,8 @@
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-keep-awake/ios",
+					"$(SRCROOT)/../node_modules/react-native-video",
 				);
 				INFOPLIST_FILE = "TableSoccer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -725,6 +741,8 @@
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-keep-awake/ios",
+					"$(SRCROOT)/../node_modules/react-native-video",
 				);
 				INFOPLIST_FILE = "TableSoccer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -781,6 +799,8 @@
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-keep-awake/ios",
+					"$(SRCROOT)/../node_modules/react-native-video",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -826,6 +846,8 @@
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-keep-awake/ios",
+					"$(SRCROOT)/../node_modules/react-native-video",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
